@@ -73,7 +73,9 @@ def index():
     return html
 
 if __name__ == "__main__":
-    print("--- Starting Flask Server ---") # This will prove the script is running
-    sys.stdout.flush()
-    port = int(os.environ.get("PORT", 5050))  # Use 5050 instead of 5000
-    app.run(host='127.0.0.1', port=port, debug=False)
+    # 1. Look for Railway's port, default to 5050 if local
+    port = int(os.environ.get("PORT", 5000))
+    
+    # 2. Use 0.0.0.0 so it's visible to Railway's network,
+    # but still accessible via 'localhost' or '127.0.0.1' on your machine.
+    app.run(host='0.0.0.0', port=port)

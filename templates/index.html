@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>UK Grid Status</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; padding: 50px; background: #f4f4f9; }
+        .card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; }
+        .status { font-size: 2rem; font-weight: bold; text-transform: uppercase; color: #2ecc71; }
+        .high { color: #e74c3c; } /* Simple styling for high intensity */
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>UK Grid Carbon Status</h1>
+        <p class="status {{ stats.index }}">{{ stats.index }}</p>
+        <p>Current Intensity: <strong>{{ stats.actual }} gCO2/kWh</strong></p>
+        <small>Updated: {{ stats.period }}</small>
+    </div>
+</body>
+</html>

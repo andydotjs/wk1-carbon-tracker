@@ -14,6 +14,7 @@ def index():
         
         # 2. Extract the bits we want
         stats = {
+            "forecast": data['intensity']['forecast'],  # e.g., "121"
             "index": data['intensity']['index'],  # e.g., "low"
             "actual": data['intensity']['actual'], # e.g., 145
             "period": data['from']                # Timeframe
